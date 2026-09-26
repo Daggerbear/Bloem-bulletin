@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-charcoal: #14161A;
+  --color-charcoal-light: #1E2126;
+  --color-charcoal-card: #22252B;
+  --color-lime: #B4E61D;
+  --color-lime-dim: #8FB818;
+  --color-cream: #F5F3EE;
+  --font-serif: Georgia, serif;
+  --radius-card: 1rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-charcoal);
+  color: var(--color-cream);
+}
+
+.card {
+  background-color: var(--color-charcoal-card);
+  border: 1px solid rgb(255 255 255 / 0.05);
+  border-radius: var(--radius-card);
+}
+
+.btn-primary {
+  background-color: var(--color-lime);
+  color: var(--color-charcoal);
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary:active {
+  background-color: var(--color-lime-dim);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid rgb(255 255 255 / 0.15);
+  color: var(--color-cream);
+  border-radius: 9999px;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.15s ease;
+}
+
+.btn-secondary:active {
+  background-color: rgb(255 255 255 / 0.05);
 }
