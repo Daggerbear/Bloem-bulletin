@@ -16,6 +16,11 @@ body {
   color: var(--color-cream);
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-lime);
+  outline-offset: 2px;
+}
+
 .card {
   background-color: var(--color-charcoal-card);
   border: 1px solid rgb(255 255 255 / 0.05);
@@ -46,4 +51,40 @@ body {
 
 .btn-secondary:active {
   background-color: rgb(255 255 255 / 0.05);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  font-size: 0.875rem;
+  white-space: nowrap;
+  transition: border-color 0.15s ease;
+}
+
+.chip:hover,
+.chip:active {
+  border-color: var(--color-lime);
+}
+
+.live-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--color-lime);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgb(180 230 29 / 0.6); }
+  70% { box-shadow: 0 0 0 8px rgb(180 230 29 / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(180 230 29 / 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot { animation: none; }
 }

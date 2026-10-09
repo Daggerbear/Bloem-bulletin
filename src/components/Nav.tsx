@@ -16,6 +16,7 @@ export default function Nav() {
     { href: "/list-event", label: "List Event" },
     { href: "/list-job", label: "Post a Job" },
     { href: "/submit-update", label: "Submit Update" },
+    { href: "/lerato", label: "Ask Lerato" },
   ];
 
   return (
