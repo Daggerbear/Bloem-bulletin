@@ -4,8 +4,8 @@ import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import HeroImageManager from "@/components/HeroImageManager";
-import type { Session } from "@supabase/supabase-js";
 import { CATEGORIES, AREAS } from "@/lib/constants";
+import type { Session } from "@supabase/supabase-js";
 
 type TableName = "businesses" | "events" | "jobs" | "updates" | "classifieds";
 type Tab = TableName | "site";
@@ -102,6 +102,11 @@ function BusinessEditor({
       ? CATEGORIES
       : [form.category, ...CATEGORIES];
 
+  const areaOptions =
+    AREAS.includes(form.area) || !form.area
+      ? AREAS
+      : [form.area, ...AREAS];
+
   async function handleSave() {
     setError("");
     if (!form.name.trim() || !form.category.trim() || !form.area.trim()) {
@@ -183,10 +188,12 @@ function BusinessEditor({
 
             <div>
               <label className={labelCls} htmlFor="b-area">Area *</label>
-              <input id="b-area" list="area-list" className={inputCls} value={form.area} onChange={(e) => set("area", e.target.value)} />
-              <datalist id="area-list">
-                {AREAS.map((a) => (<option key={a} value={a} />))}
-              </datalist>
+              <select id="b-area" className={inputCls} value={form.area} onChange={(e) => set("area", e.target.value)}>
+                <option value="">Select area</option>
+                {areaOptions.map((a) => (
+                  <option key={a} value={a}>{a}</option>
+                ))}
+              </select>
             </div>
 
             <div>
