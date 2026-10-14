@@ -15,5 +15,5 @@ export const JOB_TYPES = [
 export const AREAS = [
   "CBD", "Universitas", "Langenhoven Park", "Westdene", "Heuwelsig",
   "Bayswater", "Fleurdal", "Pellissier", "Dan Pienaar", "Hospital Park",
-  "Arboretum", "Willows", "Woodlands Hills","Fighartpark",
+  "Arboretum", "Willows", "Woodlands Hills","Fichardtpark",
 ];
