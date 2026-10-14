@@ -8,7 +8,9 @@ import WhatsOn from "@/components/WhatsOn";
 import CategoryGrid from "@/components/CategoryGrid";
 import CommunityUpdates from "@/components/CommunityUpdates";
 import JobsTeaser from "@/components/JobsTeaser";
+import ClassifiedsTeaser from "@/components/ClassifiedsTeaser";
 import EmergencyStrip from "@/components/EmergencyStrip";
+import PlayCard from "@/components/PlayCard";
 import Footer from "@/components/Footer";
 
 export const dynamic = "force-dynamic";
@@ -27,6 +29,8 @@ export default function Home() {
         <CategoryGrid />
         <CommunityUpdates />
         <JobsTeaser />
+        <ClassifiedsTeaser />
+        <PlayCard />
         <EmergencyStrip />
       </main>
       <Footer />

@@ -11,10 +11,12 @@ export default function Nav() {
     { href: "/directory", label: "Directory" },
     { href: "/whats-on", label: "What's On" },
     { href: "/jobs", label: "Jobs" },
+    { href: "/classifieds", label: "Classifieds" },
     { href: "/updates", label: "Updates" },
     { href: "/list-business", label: "List Business" },
     { href: "/list-event", label: "List Event" },
     { href: "/list-job", label: "Post a Job" },
+    { href: "/list-classified", label: "Post a Classified" },
     { href: "/submit-update", label: "Submit Update" },
     { href: "/lerato", label: "Ask Lerato" },
   ];
@@ -29,7 +31,7 @@ export default function Nav() {
           </span>
         </Link>
 
-        <nav className="hidden sm:flex items-center gap-6 text-sm">
+        <nav className="hidden lg:flex items-center gap-6 text-sm">
           {links.map((l) => (
             <Link key={l.href} href={l.href}>{l.label}</Link>
           ))}
@@ -41,7 +43,7 @@ export default function Nav() {
           </Link>
           <button
             onClick={() => setOpen(!open)}
-            className="sm:hidden text-cream p-2"
+            className="lg:hidden text-cream p-2"
             aria-label="Menu"
           >
             {open ? (
@@ -58,7 +60,7 @@ export default function Nav() {
       </div>
 
       {open && (
-        <nav className="sm:hidden border-t border-white/5 px-4 py-3 flex flex-col gap-3">
+        <nav className="lg:hidden border-t border-white/5 px-4 py-3 flex flex-col gap-3">
           {links.map((l) => (
             <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-1">
               {l.label}

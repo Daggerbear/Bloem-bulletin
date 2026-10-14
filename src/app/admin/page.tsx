@@ -6,7 +6,7 @@ import { supabase } from "@/lib/supabase";
 import HeroImageManager from "@/components/HeroImageManager";
 import type { Session } from "@supabase/supabase-js";
 
-type TableName = "businesses" | "events" | "jobs" | "updates";
+type TableName = "businesses" | "events" | "jobs" | "updates" | "classifieds";
 type Tab = TableName | "site";
 
 const TABS: { key: Tab; label: string }[] = [
@@ -14,6 +14,7 @@ const TABS: { key: Tab; label: string }[] = [
   { key: "events", label: "Events" },
   { key: "jobs", label: "Jobs" },
   { key: "updates", label: "Updates" },
+  { key: "classifieds", label: "Classifieds" },
   { key: "site", label: "Site" },
 ];
 
@@ -118,6 +119,7 @@ export default function AdminPage() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
                   <div className="font-semibold">{row.name || row.title}</div>
+                  {row.report_count > 0 && <div className="text-xs text-red-400">Reported {row.report_count}x</div>}
                   <div className="text-cream/50 text-xs">
                     Status: <span className={row.status === "approved" ? "text-lime" : row.status === "rejected" ? "text-red-400" : "text-cream/70"}>{row.status}</span>
                   </div>
